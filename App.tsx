@@ -5,6 +5,7 @@ import { calculateModel } from './services/engine';
 import { InputSection } from './components/InputSection';
 import { DataTable } from './components/DataTable';
 import { Dashboard } from './components/Dashboard';
+import { AuthGate } from './components/AuthGate';
 import { Calculator, BarChart3, Receipt, Landmark, Wallet } from 'lucide-react';
 
 function App() {
@@ -68,6 +69,7 @@ function App() {
   ] as const;
 
   return (
+    <AuthGate>
     <div className="min-h-screen bg-slate-50 flex flex-col">
       {/* Header */}
       <header className="bg-slate-900 text-white pt-6 pb-20 px-6 shadow-lg">
@@ -139,6 +141,7 @@ function App() {
         <p>&copy; 2024 Finanční Plánovač. Logika portována z Python modelu.</p>
       </footer>
     </div>
+    </AuthGate>
   );
 }
 
